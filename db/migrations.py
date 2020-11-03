@@ -1,8 +1,15 @@
 #importar sqlite3
-import sqlite3
+import sqlite3 #Relativa
+import os
+import sys
+
+sys.path.append("..")
+from config import Config #Absoluto
+
+root = Config.DB_PATH + os.sep + ".." + os.sep + "sql" + os.sep + Config.DB_NAME
 
 #Crear la conexion / o se crea
-con = sqlite3.connect("parking.db")
+con = sqlite3.connect(root)
 
 #Crear el Curso
 cursor = con.cursor()
